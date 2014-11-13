@@ -58,6 +58,7 @@
             this.el.innerHTML = _.template(this.templateHTML, model.attributes);
         }
     });
+    
     var footerView = Backbone.View.extend({
         el: document.querySelector("#footer"),
         initialize: function(opts) {
@@ -74,6 +75,7 @@
             this.el.innerHTML = _.template(this.templateHTML, model.attributes);
         }
     });
+    
     var BookListing = Backbone.Model.extend({
         initialize: function() {
             this.view = new BookView({
@@ -113,7 +115,6 @@
                 return this.fetch();
             }
         }
-
     });
 
     var AppView = Backbone.View.extend({
@@ -133,6 +134,7 @@
             this.bookCollection.startRequests();
         }
     })
+    
     var bookRouting = Backbone.Router.extend({
         initialize: function() {
             this.appView = new AppView();
